@@ -1,0 +1,377 @@
+svg.svg-tree,
+svg.svg-path text {
+    font-weight: 300;
+    font-family: "微软雅黑", Helvetica, Arial, sans-serf;
+    font-size: 14px;
+    text-align: center;
+}
+
+svg.svg-path {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+svg.svg-tree {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+    font-weight: bold;
+    fill: white;
+}
+
+svg.svg-tree g.node,
+svg.svg-path g.node {
+    transform: translate(100, 144);
+}
+
+svg.svg-small .node rect,
+svg.svg-path .node rect,
+svg.svg-tree .node rect {
+    transform: translate(0, 2px);
+    rx: 10px;
+    ry: 10px;
+}
+
+.edgeLabels text {
+    font-family: "微软雅黑", Helvetica, Arial, sans-serf;
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+    fill: black;
+}
+
+.clear-fix:after {
+    content: "";
+    display: table;
+    clear: left;
+}
+
+.clear-fix {
+    position: relative;
+}
+
+.tree-right {
+    background-color: #fff;
+    border: 1px #BDBDBD solid;
+    position: relative;
+    float: left;
+    max-width: 1000px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-left: 120px;
+}
+
+.nav-left {
+    position: absolute;
+    min-height: 100px;
+    height: 100%;
+    width: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #eaeaea;
+    float: left;
+    text-align: center;
+    padding-top: 3px;
+    border: 1px #BDBDBD solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.edge-visible path {
+    stroke-width: 3px;
+    stroke: grey;
+    fill: none;
+}
+
+.edge-high {
+    stroke-width: 5px;
+    stroke: yellow;
+    fill: none;
+}
+
+.edge-hidden {
+    stroke: none;
+    fill: none;
+}
+
+.edgeLabel-hidden text {
+    fill: none;
+}
+
+.edgeLabel-visible text {
+    fill: black;
+}
+
+.node-hidden {
+    visibility: hidden;
+}
+
+.node-hidden rect {
+    visibility: hidden;
+}
+
+.node-normal {
+    visibility: visible;
+    stroke-width: 1.5px;
+    fill: white;
+}
+
+.node-visible {
+    visibility: visible;
+    stroke-width: 1.5px;
+    stroke: #999;
+}
+
+.node-visible div {
+    color: white;
+}
+
+.node-normal div {
+    color: white;
+}
+
+.node-normal rect {
+    stroke: #999;
+    color: white;
+}
+
+.node-visible text {
+    fill: white;
+    stroke: none;
+}
+
+.node-click {
+    color: white;
+}
+
+.node-click rect {
+    stroke: #ffff00;
+    stroke-width: 5px;
+    stroke-dasharray: 5;
+    color: white;
+}
+
+.color-choose {
+    background-color: white;
+    border-radius: 4px;
+}
+
+.tipsy {
+    font-size: 12px;
+    font-weight: 300;
+    position: absolute;
+    padding: 5px;
+    z-index: 100000;
+}
+
+.tipsy-inner {
+    font-family: "微软雅黑", Helvetica, Arial, sans-serf;
+    background-color: #999;
+    color: #FFF;
+    max-width: 200px;
+    padding: 2px 3px;
+    text-align: left;
+}
+
+/* Rounded corners */
+.tipsy-inner {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+/* Uncomment for shadow */
+.tipsy-inner {
+    box-shadow: 0 0 5px #999;
+    -webkit-box-shadow: 0 0 5px #999;
+    -moz-box-shadow: 0 0 5px #999;
+}
+
+.tipsy-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border: 5px dashed #999;
+}
+
+/* Rules to colour arrows */
+.tipsy-arrow-n {
+    border-bottom-color: #999;
+}
+
+.tipsy-arrow-s {
+    border-top-color: #999;
+}
+
+.tipsy-arrow-e {
+    border-left-color: #999;
+}
+
+.tipsy-arrow-w {
+    border-right-color: #999;
+}
+
+.tipsy-n .tipsy-arrow {
+    top: 0px;
+    left: 50%;
+    margin-left: -5px;
+    border-bottom-style: solid;
+    border-top: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.tipsy-nw .tipsy-arrow {
+    top: 0;
+    left: 10px;
+    border-bottom-style: solid;
+    border-top: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.tipsy-ne .tipsy-arrow {
+    top: 0;
+    right: 10px;
+    border-bottom-style: solid;
+    border-top: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.tipsy-s .tipsy-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-top-style: solid;
+    border-bottom: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.tipsy-sw .tipsy-arrow {
+    bottom: 0;
+    left: 10px;
+    border-top-style: solid;
+    border-bottom: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.tipsy-se .tipsy-arrow {
+    bottom: 0;
+    right: 10px;
+    border-top-style: solid;
+    border-bottom: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.tipsy-e .tipsy-arrow {
+    right: 0;
+    top: 50%;
+    margin-top: -5px;
+    border-left-style: solid;
+    border-right: none;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.tipsy-w .tipsy-arrow {
+    left: 0;
+    top: 50%;
+    margin-top: -5px;
+    border-right-style: solid;
+    border-left: none;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.treebtn-xs {
+    font-family: "微软雅黑", Helvetica, Arial, sans-serf;
+    padding: 5px 5px;
+    font-size: 13px;
+    line-height: 1;
+    border-radius: 3px;
+}
+
+.treebtn-default {
+    position: absolute;
+    top: 5px;
+    color: #fff;
+    background-color: #FFC125;
+    border-color: #FFC125;
+}
+
+.treebtn1 {
+    position: absolute;
+    right: 225px;
+}
+
+.treebtn2 {
+    position: absolute;
+    right: 165px;
+}
+
+.treebtn3 {
+    position: absolute;
+    right: 115px;
+}
+
+.treebtn4 {
+    position: absolute;
+    right: 65px;
+}
+
+.treebtn5 {
+    position: absolute;
+    right: 15px;
+    top: 7px;
+    width: 20px;
+    height: 20px;
+}
+
+.treebtn {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 2px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+
+.panel-body {
+    padding: 0 !important;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-right: 0 !important;
+    padding-left: 20px !important;
+}
+
+.list-group {
+    max-height: 358px;
+    min-height: 358px;
+    overflow-y: auto;
+}
+
+.com-float-left {
+    float: left;
+}
+
+.com-ctl {
+    width: 320px;
+    margin-left: 10px;
+}
