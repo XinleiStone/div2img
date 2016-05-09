@@ -1,9 +1,23 @@
 .node {
-	stroke: #fff;
-	stroke-width: 1.5px;
+    stroke: #fff;
+    stroke-width: 1.5px;
 }
 
 .link {
-	stroke: #999;
-	stroke-opacity: .6;
+    stroke: #999;
+    stroke-opacity: .6;
+}
+
+svg {
+    width: 800px;
+    height: 600px;
+    font-family: helvetica, sans-serif;
+}
+
+path, line {
+    stroke: green;
+}
+
+.container {
+    margin-left: 300px;
 }
