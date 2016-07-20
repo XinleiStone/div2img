@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>force-directed-graph</title>
+</head>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 1100px;
+            margin: 10px auto;
+        }
+
+        .option {
+            width: 300px; 
+            height: 650px; 
+            float: left; font-family: '微软雅黑'; 
+            margin-left: 20px; 
+            border: 1px #c3c3c3 solid; 
+            border-radius: 5px;
+            padding: 15px;
+            box-sizing: border-box;
+            line-height: 30px;
+            background: #e3e3e3;
+        }
+
+        button {
+            color: #fff;
+            background-color: #FFC125;
+            border-color: #FFC125;
+            font-family: "微软雅黑", Helvetica, Arial, sans-serf;
+            font-weight: bold;
+            padding: 5px 5px;
+            font-size: 13px;
+            line-height: 1;
+            border-radius: 5px;
+            height: 35px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        input {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .declare {
+            width: 100%;
+            border: 1px #c3c3c3 dotted;
+            margin-top: 20px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        pre {
+            font-size: 15px;
+            font-family: "微软雅黑", Helvetica, Arial, sans-serf;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+<body>
+<div class="container">
+    <h2>SVG保存图片示例</h2>
+
+    <div id="example" style="width: 650px; float: left;"></div>
+    <div class="option">
+        <h4>可配置项如下：</h4>
+        <label for="containerid">Div元素id：</label><br>
+        <input id="containerid" disabled="true" type="text" value="example"><br>
+        <label for="imgname">保存图片名：</label><br>
+        <input id="imgname" oninput="changeName(this);" placeholder="请不要加后缀名" type="text"><br>
+        <label for="bgcolor">背景颜色：</label><br>
+        <input id="bgclor" oninput="changeColor(this);" placeholder="如: #f00" type="text"><br>
+        保存图片：<br>
+        <button id="buttoncId" type="button" onclick="downloadImg()">Download</button>
+        <div class="declare">
+            <p>配置项及使用：</p>
+            <pre>
+    var option = {
+        id: "", // 元素id
+        name: "", // 保存名
+        backgroundColor: "" // 背景
+        download: true // 是否下载
+    }
+    div2img(options);
+            </pre>
+        </div>
+    </div>
+</div>
+    <!-- demo所需的资源 -->
+    <!-- <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/2.0.3/css/bootstrap.min.css"/> -->
+    <link rel="stylesheet" href="text-classify.css">
+    <script src="http://apps.bdimg.com/libs/d3/3.4.8/d3.min.js"></script>
+    <script src="textClassify.js"></script>
+
+    <!-- div2img工具必须依赖的资源库 -->
+    <script src="../libs/SVG2Bitmap.min.js"></script>
+    <script src="../libs/html2canvas.min.js"></script>
+    <!-- div2img工具库 -->
+    <script src="../div2img.js"></script>
+    <script>
+
+        window.onload = function() {
+            var options = {
+                
+            };
+            textClassify.draw("data.json", "example", options);
+        };
+
+        var options = {
+            id: "example",
+            name: "example",
+            backgroundColor: 'red'
+        }
+
+        function changeName(dom) {
+            options.name = dom.value;
+        }
+
+        function changeColor(dom) {
+            options.backgroundColor = dom.value;
+        }
+
+        function downloadImg() {
+            div2img(options);
+        }
+
+    </script>
+</body>
