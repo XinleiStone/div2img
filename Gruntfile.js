@@ -3,12 +3,19 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
             options: {
-                // 此处定义的banner注释将插入到输出文件的顶部
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> <%= pkg.author %> \n github: <%= pkg.repository.url %> */\n'
             },
             dist: {
                 files: {
-                    'dist/<%= pkg.name %>.min.js': ['dist/<%= pkg.name %>.js']
+                    'dist/<%= pkg.name %>.min.js': 'dist/<%= pkg.name %>.js',
+                    'demo/textClassify.min.js': 'demo/textClassify.js'
+                }
+            }
+        },
+        cssmin: {
+            css: {
+                files: {
+                    'demo/text-classify.min.css': 'demo/text-classify.css'
                 }
             }
         },
@@ -19,6 +26,7 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-css');
 
-    grunt.registerTask('default', ['uglify']);
-}
+    grunt.registerTask('default', ['uglify', 'cssmin']);
+};

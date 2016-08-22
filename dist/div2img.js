@@ -188,7 +188,7 @@ var div2img = function (options) {
             top: box.top + win.pageYOffset - docElem.clientTop,
             left: box.left + win.pageXOffset - docElem.clientLeft
         };
-    };
+    }
 
     function getWindow(elem) {
         return isWindow(elem) ? elem : elem.nodeType === 9 && elem.defaultView;
