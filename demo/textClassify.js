@@ -155,6 +155,8 @@ var textClassify = {
             .attr("r", 15)
             .style("fill", "rgb(255, 165, 0)");
 
+        d3.selectAll("g.node").style("cursor", "pointer");
+
         function getChild(data) {
             for (var d in data) {
                 var originalLength = data[d].length;
@@ -275,8 +277,6 @@ var textClassify = {
                             return ((d.x + 90) / 180 * Math.PI);
                         }
                     });
-
-
 
                 node.append("circle")
                     .attr("d", function(d, i) {

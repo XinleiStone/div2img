@@ -71,8 +71,8 @@
     </style>
 <body>
 <div class="container">
-    <h2>SVG保存图片示例</h2>
-
+    <p><strong>SVG保存图片示例:</strong></p>
+    <br>
     <div id="example" style="width: 650px; float: left;"></div>
     <div class="option">
         <h4>可配置项如下：</h4>
@@ -100,15 +100,15 @@
 </div>
     <!-- demo所需的资源 -->
     <!-- <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/2.0.3/css/bootstrap.min.css"/> -->
-    <link rel="stylesheet" href="text-classify.css">
+    <link rel="stylesheet" href="text-classify.min.css">
     <script src="http://apps.bdimg.com/libs/d3/3.4.8/d3.min.js"></script>
-    <script src="textClassify.js"></script>
+    <script src="textClassify.min.js"></script>
 
     <!-- div2img工具必须依赖的资源库 -->
     <script src="../libs/SVG2Bitmap.min.js"></script>
     <script src="../libs/html2canvas.min.js"></script>
     <!-- div2img工具库 -->
-    <script src="../div2img.js"></script>
+    <script src="../dist/div2img.min.js"></script>
     <script>
 
         window.onload = function() {
@@ -121,8 +121,8 @@
         var options = {
             id: "example",
             name: "example",
-            backgroundColor: 'red'
-        }
+            backgroundColor: 'transparent'
+        };
 
         function changeName(dom) {
             options.name = dom.value;
