@@ -20,4 +20,4 @@ Convert all the contents of the div element into a picture including SVG and can
 }</pre>
 
 <h3>演示（Demo）</h3>
-  http://liuxinlei.com/works/div2img/demo/index.html
+  http://liuxinlei.com/works/div2img/demo/
