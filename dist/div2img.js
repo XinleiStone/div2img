@@ -27,7 +27,7 @@ var div2img = function (options) {
         // get context 2d for drawing
         var tt = can.getContext("2d");
         // background color, default white
-        tt.fillStyle = colorBack;
+        tt.fillStyle = dom.style.backgroundColor || dom.style.background || colorBack;
         // draw background
         tt.fillRect(0, 0, coor.width, coor.height);
         // recursion
@@ -43,14 +43,14 @@ var div2img = function (options) {
                     document.body.appendChild(triggerDownload);
                     triggerDownload.click();
                     document.body.removeChild(triggerDownload);
-                }, 1000);
+                }, 0);
             }
         }, 10);
 
         // recursion get element' children
         function reGet(element) {
             if (element.tagName != "svg") {
-                if (0 !== element.children.length && "table" !== element.tagName) {
+                if (0 !== element.children.length && element.getElementsByTagName("svg").length) {
                     for (var i = 0; i < element.children.length; i++) {
                         reGet(element.children[i]);
                     }
@@ -59,7 +59,6 @@ var div2img = function (options) {
                     html2canvas(element, {
                         onrendered: function (canvas) {
                             tt.drawImage(canvas, coorEle.left - widthTrans, coorEle.top - heightTrans);
-                            document.body.appendChild(canvas);
                         }
                     });
                 }
